@@ -1,28 +1,29 @@
-import { Typography, AppBar, CssBaseline, Toolbar, Container, Box } from '@mui/material';
-import { TodoList } from './components/Elements/List/TodoList'
-import { TodoSearch } from './components/Form/index'
-import { BottomAppBar } from './components/Elements/AppBar/BottomAppBar';
-import Logo from './assets/logo.svg'
+import { CssBaseline, Container, Typography, Box } from "@mui/material";
+import { TodoList } from "./components/Elements/List/TodoList";
+import { CreateNew } from "./components/Elements/Button";
+import { TodoSearch } from "./components/Form/index";
+import { TopAppBar } from "./components/Elements/AppBar/TopAppBar";
 
 function App() {
   return (
-    <div>
+    <div style={{ backgroundColor: "#f9f9f9", height: "100%" }}>
       <CssBaseline />
-      <AppBar position="relative" sx={{ minWidth: '100%' }}>
-        <Toolbar>
-          <Box display="flex" alignItems="center">
-              <img src={Logo} alt="Logo" />
-              <Typography variant="h6">ClearBlade Todolist</Typography>
-          </Box>
-        </Toolbar>
-      </AppBar>
+      <TopAppBar />
       <main>
         <div>
-          <Container maxWidth="sm" sx={{ paddingBottom: '6rem' }}>
+          <Container maxWidth="sm" sx={{ paddingBottom: "6rem" }}>
+            <Box display="flex" alignItems="center" sx={{ marginTop: "1rem" }}>
+              <Typography
+                variant="h3"
+                sx={{ marginRight: "1rem", fontWeight: "bold" }}
+              >
+                Today's Tasks
+              </Typography>
+              <CreateNew />
+            </Box>
             <TodoSearch />
             <TodoList />
-           </Container>
-           <BottomAppBar />
+          </Container>
         </div>
       </main>
     </div>

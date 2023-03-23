@@ -17,3 +17,7 @@ export declare interface TodoItemProps {
     onDeleteTodo: (id: number) => void 
     onToggleComplete: (id: number, updatedComplete: boolean) => void
 }
+
+export declare interface TodoFormProps {
+    handleBackdropClose: () => void
+}

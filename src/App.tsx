@@ -1,24 +1,30 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Typography, AppBar, CssBaseline, Toolbar, Container, Box } from '@mui/material';
+import { TodoList } from './components/Elements/List/TodoList'
+import { TodoSearch } from './components/Form/index'
+import { BottomAppBar } from './components/Elements/AppBar/BottomAppBar';
+import Logo from './assets/logo.svg'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <CssBaseline />
+      <AppBar position="relative" sx={{ minWidth: '100%' }}>
+        <Toolbar>
+          <Box display="flex" alignItems="center">
+              <img src={Logo} alt="Logo" />
+              <Typography variant="h6">ClearBlade Todolist</Typography>
+          </Box>
+        </Toolbar>
+      </AppBar>
+      <main>
+        <div>
+          <Container maxWidth="sm" sx={{ paddingBottom: '6rem' }}>
+            <TodoSearch />
+            <TodoList />
+           </Container>
+           <BottomAppBar />
+        </div>
+      </main>
     </div>
   );
 }

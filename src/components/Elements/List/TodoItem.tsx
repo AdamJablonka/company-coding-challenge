@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
-import { TodoItemProps } from "../../../types/index";
 import { Box, Typography } from "@mui/material";
 import { TodoActions } from "../Button/TodoActions";
 import { EditTodoForm } from "../../Form/EditTodoForm";
+import { TodoItemProps } from "../../../types";
 
 export const TodoItem = ({
   todo,
@@ -66,7 +66,7 @@ export const TodoItem = ({
             >
               <Typography
                 variant="h6"
-                sx={{ fontWeight: 500 }}
+                sx={{ fontWeight: 300 }}
                 style={{
                   wordWrap: "break-word",
                   overflowWrap: "break-word",

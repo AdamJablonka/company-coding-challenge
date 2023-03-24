@@ -44,7 +44,7 @@ export const TodoForm = ({ handleBackdropClose }: TodoFormProps) => {
         elevation={3}
         sx={{
           borderRadius: "1rem",
-          padding: "6rem",
+          padding: "3rem",
           border: "none",
           position: "relative",
         }}
@@ -70,9 +70,18 @@ export const TodoForm = ({ handleBackdropClose }: TodoFormProps) => {
           onChange={(e) => setTitle(e.target.value)}
           label="New Todo"
           variant="outlined"
-          sx={{ flexGrow: 1, marginRight: "1rem" }}
+          sx={{ flexGrow: 1, marginRight: "3rem" }}
         />
-        <Fab color="primary" aria-label="add" onClick={addTodo}>
+        <Fab
+          color="primary"
+          aria-label="add"
+          onClick={addTodo}
+          sx={{
+            position: "absolute",
+            marginRight: "1rem",
+            right: "0.25rem",
+          }}
+        >
           <AddIcon />
         </Fab>
       </Paper>

@@ -2,6 +2,13 @@
 
 This is a simple React App using Material-UI, Typescript, Zustand for state management, @hello-pangea/dnd for drag and drop, and attempts to follow Bulletproof react.
 
+to install:
+`gh repo clone AdamJablonka/clearblade-coding-challenge`
+
+`npm install`
+
+`npm run start`
+
 ## Application features implemented
 
 - View all todos

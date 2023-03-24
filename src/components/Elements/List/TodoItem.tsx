@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
-import { TodoItemProps } from "../../../types/index";
 import { Box, Typography } from "@mui/material";
 import { TodoActions } from "../Button/TodoActions";
 import { EditTodoForm } from "../../Form/EditTodoForm";
+import { TodoItemProps } from "../../../types";
 
 export const TodoItem = ({
   todo,
@@ -20,7 +20,7 @@ export const TodoItem = ({
 
   useEffect(() => {
     onToggleComplete(todo.id, completed);
-  }, [completed]);
+  }, [completed, onToggleComplete, todo.id]);
 
   const handleSave = () => {
     // check if user entered non-empty title
@@ -66,7 +66,7 @@ export const TodoItem = ({
             >
               <Typography
                 variant="h6"
-                sx={{ fontWeight: 400 }}
+                sx={{ fontWeight: 300 }}
                 style={{
                   wordWrap: "break-word",
                   overflowWrap: "break-word",

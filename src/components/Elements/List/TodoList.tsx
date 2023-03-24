@@ -1,4 +1,4 @@
-import { useTodoStore, useSearchStore } from "../../../stores/index";
+import { useSearchStore } from "../../../stores/index";
 import {
   AllFilter,
   CompletedFilter,
@@ -6,15 +6,7 @@ import {
 } from "./FilteredLists/index";
 
 export const TodoList = () => {
-  const todoList = useTodoStore((state) => state);
-  const searchQuery = useSearchStore((state) => state.search);
   const todoFilter = useSearchStore((state) => state.todoFilter);
-
-  let filteredItems: any[];
-
-  filteredItems = todoList.todos.filter((item) =>
-    item.title.toLowerCase().includes(searchQuery.toLowerCase())
-  );
 
   return (
     <>

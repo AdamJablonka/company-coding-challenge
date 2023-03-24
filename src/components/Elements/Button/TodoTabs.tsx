@@ -3,7 +3,6 @@ import Box from "@mui/material/Box";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import { useSearchStore } from "../../../stores";
-import { ContentPasteSearchOutlined } from "@mui/icons-material";
 
 export const TodoTabs = () => {
   const [value, setValue] = React.useState(0);
@@ -15,7 +14,7 @@ export const TodoTabs = () => {
 
   React.useEffect(() => {
     updateTodoFilter(value);
-  }, [value]);
+  }, [value, updateTodoFilter]);
 
   return (
     <Box sx={{ width: "100%" }}>

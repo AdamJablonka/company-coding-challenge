@@ -4,10 +4,11 @@ import { useTodoStore } from "../../../stores";
 import { Todo } from "../../../types";
 import { DragDropContext, Droppable, Draggable } from "@hello-pangea/dnd";
 
-export const TodoMap = ({ filteredItems, setFilteredItems }: any) => {
+export const TodoMap = ({ filteredItems }: any) => {
   const updateTodo = useTodoStore((state) => state.updateTodo);
   const deleteTodo = useTodoStore((state) => state.deleteTodo);
   const toggleComplete = useTodoStore((state) => state.toggleComplete);
+  const reorderTodos = useTodoStore((state) => state.reorderTodos);
 
   const onDragEnd = useCallback(
     (result: any) => {
@@ -23,9 +24,9 @@ export const TodoMap = ({ filteredItems, setFilteredItems }: any) => {
       const [removed] = newFilteredItems.splice(result.source.index, 1);
       newFilteredItems.splice(result.destination.index, 0, removed);
 
-      setFilteredItems(newFilteredItems);
+      reorderTodos(result.source.index, result.destination.index);
     },
-    [filteredItems, setFilteredItems]
+    [reorderTodos]
   );
 
   return (

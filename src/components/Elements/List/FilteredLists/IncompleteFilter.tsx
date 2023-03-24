@@ -1,13 +1,12 @@
 import { useTodoStore, useSearchStore } from "../../../../stores/index";
 import { TodoMap } from "../TodoMap";
+import { useState, useEffect } from "react";
 
 export const IncompleteFilter = () => {
   const todoList = useTodoStore((state) => state);
   const searchQuery = useSearchStore((state) => state.search);
 
-  let filteredItems: any[];
-
-  filteredItems = todoList.todos.filter(
+  const filteredItems = todoList.todos.filter(
     (item) =>
       item.title.toLowerCase().includes(searchQuery.toLowerCase()) &&
       !item.completed

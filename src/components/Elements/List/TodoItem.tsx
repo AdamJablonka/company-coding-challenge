@@ -33,7 +33,7 @@ export const TodoItem = ({
   };
 
   return (
-    <div
+    <li
       style={{
         width: "90%",
         display: "flex",
@@ -46,8 +46,8 @@ export const TodoItem = ({
         alignItems="center"
         justifyContent="space-between"
         width="100%"
-        padding="1rem"
         marginTop="1rem"
+        padding="1rem"
         sx={{ backgroundColor: "white", borderRadius: "15px" }}
       >
         {isEditing ? (
@@ -90,6 +90,6 @@ export const TodoItem = ({
           </>
         )}
       </Box>
-    </div>
+    </li>
   );
 };

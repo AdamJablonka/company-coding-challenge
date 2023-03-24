@@ -47,7 +47,7 @@ export const TodoItem = ({
         justifyContent="space-between"
         width="100%"
         padding="1rem"
-        marginBottom="1rem"
+        marginTop="1rem"
         sx={{ backgroundColor: "white", borderRadius: "15px" }}
       >
         {isEditing ? (

@@ -1,6 +1,5 @@
-import { AppBar, CssBaseline, Toolbar, Box, Typography } from "@mui/material";
+import { AppBar, Toolbar, Box, Typography, Link } from "@mui/material";
 import Logo from "../../../assets/logo.svg";
-import { TodoSearch } from "../../Form";
 
 export const TopAppBar = () => {
   return (
@@ -11,19 +10,40 @@ export const TopAppBar = () => {
       >
         <Toolbar>
           <Box display="flex" alignItems="center">
-            <img src={Logo} alt="Logo" />
-            <Typography
-              variant="h6"
-              sx={{ fontWeight: "bold", color: "white" }}
+            <Link
+              href="https://www.clearblade.com/"
+              target="_blank"
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                textDecoration: "none",
+                "&:hover .logo-text": {
+                  color: "#27ebaf",
+                },
+              }}
             >
-              CLEAR
-            </Typography>
-            <Typography
-              variant="h6"
-              sx={{ fontWeight: "light", color: "white" }}
-            >
-              BLADE
-            </Typography>
+              <img src={Logo} alt="Logo" />
+              <Typography
+                variant="h6"
+                sx={{
+                  fontWeight: "bold",
+                  color: "white",
+                }}
+                className="logo-text"
+              >
+                CLEAR
+              </Typography>
+              <Typography
+                variant="h6"
+                sx={{
+                  fontWeight: "light",
+                  color: "white",
+                }}
+                className="logo-text"
+              >
+                BLADE
+              </Typography>
+            </Link>
           </Box>
         </Toolbar>
       </AppBar>

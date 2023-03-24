@@ -26,9 +26,9 @@ export const TodoTabs = () => {
         textColor="primary"
         indicatorColor="primary"
       >
-        <Tab label="All" />
-        <Tab label="Incomplete" />
-        <Tab label="Completed" />
+        <Tab label="All" sx={{ fontWeight: "bold" }} />
+        <Tab label="Incomplete" sx={{ fontWeight: "bold" }} />
+        <Tab label="Completed" sx={{ fontWeight: "bold" }} />
       </Tabs>
     </Box>
   );

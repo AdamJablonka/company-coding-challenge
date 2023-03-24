@@ -48,7 +48,6 @@ export const TodoForm = ({ handleBackdropClose }: TodoFormProps) => {
       createTodo({ id: Date.now(), title, completed: false });
       setTitle("");
       setOpen(true);
-      handleBackdropClose();
     }
   };
 

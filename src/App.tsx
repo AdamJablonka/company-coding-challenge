@@ -1,12 +1,12 @@
 import { CssBaseline, Container, Typography, Box } from "@mui/material";
 import { TodoList } from "./components/Elements/List/TodoList";
-import { CreateNew } from "./components/Elements/Button";
+import { CreateNew, TodoTabs } from "./components/Elements/Button/index";
 import { TodoSearch } from "./components/Form/index";
 import { TopAppBar } from "./components/Elements/AppBar/TopAppBar";
 
 function App() {
   return (
-    <div style={{ backgroundColor: "#f9f9f9", height: "100%" }}>
+    <div style={{ backgroundColor: "#f9f9f9", height: "100vh" }}>
       <CssBaseline />
       <TopAppBar />
       <main>
@@ -21,6 +21,7 @@ function App() {
               </Typography>
               <CreateNew />
             </Box>
+            <TodoTabs />
             <TodoSearch />
             <TodoList />
           </Container>

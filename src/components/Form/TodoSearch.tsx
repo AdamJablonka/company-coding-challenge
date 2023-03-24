@@ -1,27 +1,25 @@
-import { TextField } from '@mui/material';
-import { useState, useEffect } from 'react'
-import { useSearchStore } from '../../stores/useSearchStore'
-import { FilterCompleteBtn } from '../Elements/Button/FilterCompleteBtn';
+import { TextField } from "@mui/material";
+import { useState, useEffect } from "react";
+import { useSearchStore } from "../../stores/useSearchStore";
 
 export const TodoSearch = () => {
-    const [searchQuery, setSearchQuery] = useState('')
-    const updateSearch = useSearchStore((state) => state.updateSearch)
+  const [searchQuery, setSearchQuery] = useState("");
+  const updateSearch = useSearchStore((state) => state.updateSearch);
 
-    useEffect(() => {
-        updateSearch(searchQuery)
-    }, [searchQuery])
+  useEffect(() => {
+    updateSearch(searchQuery);
+  }, [searchQuery]);
 
-    return(
-        <>
-            <TextField
-              value= {searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              label="Search"
-              variant="outlined"
-              fullWidth
-              style={{ marginTop: '1rem' }}
-            />
-            <FilterCompleteBtn />
-        </>
-    )
-}
+  return (
+    <>
+      <TextField
+        value={searchQuery}
+        onChange={(e) => setSearchQuery(e.target.value)}
+        label="Search"
+        variant="outlined"
+        fullWidth
+        style={{ marginTop: "1rem" }}
+      />
+    </>
+  );
+};

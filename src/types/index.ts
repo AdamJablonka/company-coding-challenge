@@ -1,23 +1,25 @@
 export interface Todo {
-    id: number
-    title: string
-    completed: boolean
+  id: number;
+  title: string;
+  completed: boolean;
 }
 
 export interface SearchState {
-    search: string
-    showComplete: boolean
-    updateSearch: (updatedSearch: string) => void
-    toggleShowCompleted: (showCompleted: boolean) => void
+  search: string;
+  showComplete: boolean;
+  todoFilter: number;
+  updateSearch: (updatedSearch: string) => void;
+  toggleShowCompleted: (showCompleted: boolean) => void;
+  updateTodoFilter: (updatedTodoFilter: number) => void;
 }
 
 export declare interface TodoItemProps {
-    todo: Todo
-    onUpdateTodo: (id: number, updatedTitle: string) => void
-    onDeleteTodo: (id: number) => void 
-    onToggleComplete: (id: number, updatedComplete: boolean) => void
+  todo: Todo;
+  onUpdateTodo: (id: number, updatedTitle: string) => void;
+  onDeleteTodo: (id: number) => void;
+  onToggleComplete: (id: number, updatedComplete: boolean) => void;
 }
 
 export declare interface TodoFormProps {
-    handleBackdropClose: () => void
+  handleBackdropClose: () => void;
 }

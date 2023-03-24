@@ -1,36 +1,26 @@
-import { useTodoStore, useSearchStore } from '../../../stores/index'
-import { TodoItem } from './TodoItem'
-import { Typography } from '@mui/material';
+import { useTodoStore, useSearchStore } from "../../../stores/index";
+import {
+  AllFilter,
+  CompletedFilter,
+  IncompleteFilter,
+} from "./FilteredLists/index";
 
 export const TodoList = () => {
-    const todoList = useTodoStore((state) => state)
-    const updateTodo = useTodoStore((state) => state.updateTodo)
-    const deleteTodo = useTodoStore((state) => state.deleteTodo)
-    const toggleComplete = useTodoStore((state) => state.toggleComplete)
-    const showCompleted = useSearchStore((state) => state.showComplete)
-    const searchQuery = useSearchStore((state) => state.search)
+  const todoList = useTodoStore((state) => state);
+  const searchQuery = useSearchStore((state) => state.search);
+  const todoFilter = useSearchStore((state) => state.todoFilter);
 
-    let filteredItems: any[]
+  let filteredItems: any[];
 
-    showCompleted
-    ? filteredItems = todoList.todos.filter((item) => 
-        item.title.toLowerCase().includes(searchQuery.toLowerCase()) && item.completed)
-    : filteredItems = todoList.todos.filter((item) => 
-        item.title.toLowerCase().includes(searchQuery.toLowerCase()) && !item.completed)
+  filteredItems = todoList.todos.filter((item) =>
+    item.title.toLowerCase().includes(searchQuery.toLowerCase())
+  );
 
-    return(
-        <div>
-            <Typography variant="h2" align="center" color="textPrimary">
-                {filteredItems.map((todoItem) => (
-                    <TodoItem
-                        key={todoItem.id}
-                        todo={todoItem}
-                        onUpdateTodo={updateTodo}
-                        onDeleteTodo={deleteTodo}
-                        onToggleComplete={toggleComplete}
-                    />
-                ))}
-            </Typography>
-        </div>
-    )
-}
+  return (
+    <>
+      {todoFilter === 0 && <AllFilter />}
+      {todoFilter === 1 && <IncompleteFilter />}
+      {todoFilter === 2 && <CompletedFilter />}
+    </>
+  );
+};

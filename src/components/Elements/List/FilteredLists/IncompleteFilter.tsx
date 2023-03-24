@@ -1,6 +1,5 @@
 import { useTodoStore, useSearchStore } from "../../../../stores/index";
 import { TodoMap } from "../TodoMap";
-import { useState, useEffect } from "react";
 
 export const IncompleteFilter = () => {
   const todoList = useTodoStore((state) => state);

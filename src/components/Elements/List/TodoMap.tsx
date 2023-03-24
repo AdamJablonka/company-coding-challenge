@@ -26,7 +26,7 @@ export const TodoMap = ({ filteredItems }: any) => {
 
       reorderTodos(result.source.index, result.destination.index);
     },
-    [reorderTodos]
+    [reorderTodos, filteredItems]
   );
 
   return (

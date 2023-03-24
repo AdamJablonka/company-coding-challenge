@@ -20,7 +20,7 @@ export const TodoItem = ({
 
   useEffect(() => {
     onToggleComplete(todo.id, completed);
-  }, [completed]);
+  }, [completed, onToggleComplete, todo.id]);
 
   const handleSave = () => {
     // check if user entered non-empty title
@@ -66,7 +66,7 @@ export const TodoItem = ({
             >
               <Typography
                 variant="h6"
-                sx={{ fontWeight: 400 }}
+                sx={{ fontWeight: 500 }}
                 style={{
                   wordWrap: "break-word",
                   overflowWrap: "break-word",

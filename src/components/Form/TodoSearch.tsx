@@ -8,7 +8,7 @@ export const TodoSearch = () => {
 
   useEffect(() => {
     updateSearch(searchQuery);
-  }, [searchQuery]);
+  }, [searchQuery, updateSearch]);
 
   return (
     <>

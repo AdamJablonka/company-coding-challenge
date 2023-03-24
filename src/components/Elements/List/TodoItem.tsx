@@ -1,15 +1,8 @@
 import { useState, useEffect } from "react";
 import { TodoItemProps } from "../../../types/index";
-import {
-  Button,
-  TextField,
-  Tooltip,
-  IconButton,
-  Box,
-  Typography,
-} from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import { TodoActions } from "../Button/TodoActions";
-import SaveIcon from "@mui/icons-material/Save";
+import { EditTodoForm } from "../../Form/EditTodoForm";
 
 export const TodoItem = ({
   todo,
@@ -34,6 +27,8 @@ export const TodoItem = ({
     if (title.trim()) {
       onUpdateTodo(todo.id, title);
       setIsEditing(false);
+    } else {
+      onDeleteTodo(todo.id);
     }
   };
 
@@ -56,20 +51,11 @@ export const TodoItem = ({
         sx={{ backgroundColor: "white", borderRadius: "15px" }}
       >
         {isEditing ? (
-          <>
-            <TextField
-              value={title}
-              onChange={(e) => setTitle(e.target.value)}
-              label="Edit Todo"
-              variant="outlined"
-              sx={{ width: "75%" }}
-            />
-            <Tooltip title="Save">
-              <IconButton onClick={handleSave}>
-                <SaveIcon />
-              </IconButton>
-            </Tooltip>
-          </>
+          <EditTodoForm
+            title={title}
+            setTitle={setTitle}
+            handleSave={handleSave}
+          />
         ) : (
           <>
             <Box
@@ -80,12 +66,13 @@ export const TodoItem = ({
             >
               <Typography
                 variant="h6"
+                sx={{ fontWeight: 400 }}
                 style={{
                   wordWrap: "break-word",
                   overflowWrap: "break-word",
                   whiteSpace: "normal",
                   paddingRight: "1rem",
-                  fontWeight: "bold",
+                  textDecoration: completed ? "line-through" : "none",
                 }}
               >
                 {todo.title}

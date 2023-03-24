@@ -1,5 +1,4 @@
 import * as React from "react";
-import { useState } from "react";
 import {
   TextField,
   Tooltip,
@@ -24,13 +23,8 @@ const Alert = React.forwardRef<HTMLDivElement, AlertProps>(function Alert(
 
 export const TodoForm = ({ handleBackdropClose }: TodoFormProps) => {
   const createTodo = useTodoStore((state) => state.createTodo);
-  const clearTodos = useTodoStore((state) => state.clearTodos);
-  const [title, setTitle] = useState("");
+  const [title, setTitle] = React.useState("");
   const [open, setOpen] = React.useState(false);
-
-  const handleClick = () => {
-    setOpen(true);
-  };
 
   const handleClose = (
     event?: React.SyntheticEvent | Event,
@@ -68,8 +62,8 @@ export const TodoForm = ({ handleBackdropClose }: TodoFormProps) => {
       <Paper
         elevation={3}
         sx={{
-          borderRadius: "0.25rem",
-          padding: "2rem",
+          borderRadius: "1rem",
+          padding: "6rem",
           border: "none",
           position: "relative",
         }}
@@ -83,6 +77,7 @@ export const TodoForm = ({ handleBackdropClose }: TodoFormProps) => {
               right: "0.5rem",
               top: "0.5rem",
               padding: "0.5rem",
+              marginLeft: "1rem",
             }}
           >
             <CloseIcon />

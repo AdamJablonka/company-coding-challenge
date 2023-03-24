@@ -12,10 +12,16 @@ export const TopAppBar = () => {
         <Toolbar>
           <Box display="flex" alignItems="center">
             <img src={Logo} alt="Logo" />
-            <Typography variant="h6" sx={{ fontWeight: "bold" }}>
+            <Typography
+              variant="h6"
+              sx={{ fontWeight: "bold", color: "white" }}
+            >
               CLEAR
             </Typography>
-            <Typography variant="h6" sx={{ fontWeight: "light" }}>
+            <Typography
+              variant="h6"
+              sx={{ fontWeight: "light", color: "white" }}
+            >
               BLADE
             </Typography>
           </Box>

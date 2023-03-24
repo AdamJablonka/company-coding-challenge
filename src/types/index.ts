@@ -23,3 +23,16 @@ export declare interface TodoItemProps {
 export declare interface TodoFormProps {
   handleBackdropClose: () => void;
 }
+
+export declare interface EditFormProps {
+  title: string;
+  setTitle: (title: string) => void;
+  handleSave: () => void;
+}
+
+export declare interface TodoActionsProps {
+  setIsEditing: (editing: boolean) => void;
+  handleDelete: () => void;
+  setCompleted: (completed: boolean) => void;
+  completed: boolean;
+}

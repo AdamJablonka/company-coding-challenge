@@ -1,16 +1,14 @@
-import { IconButton, Tooltip, Box } from "@mui/material";
+import { IconButton, Tooltip, Box, Checkbox } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
 import EditIcon from "@mui/icons-material/Edit";
-import FlakyIcon from "@mui/icons-material/Flaky";
+import { TodoActionsProps } from "../../../types";
 
-interface TodoActionsProps {
-  setIsEditing: (editing: boolean) => void;
-  handleDelete: () => void;
-  setCompleted: (completed: boolean) => void;
-  completed: boolean;
-}
-
-export const TodoActions = ({ setIsEditing, handleDelete, setCompleted, completed }: TodoActionsProps) => {
+export const TodoActions = ({
+  setIsEditing,
+  handleDelete,
+  setCompleted,
+  completed,
+}: TodoActionsProps) => {
   return (
     <Box display="flex">
       <Tooltip title="Edit">
@@ -23,11 +21,11 @@ export const TodoActions = ({ setIsEditing, handleDelete, setCompleted, complete
           <DeleteIcon />
         </IconButton>
       </Tooltip>
-      <Tooltip title="Toggle Completion">
-        <IconButton onClick={() => setCompleted(!completed)}>
-          <FlakyIcon />
-        </IconButton>
-      </Tooltip>
+      <Checkbox
+        checked={completed}
+        onChange={() => setCompleted(!completed)}
+        inputProps={{ "aria-label": "controlled" }}
+      />
     </Box>
   );
 };

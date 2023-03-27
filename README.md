@@ -70,6 +70,4 @@ Adding the drag and drop functionality to the application caused many bugs which
 - Dragging does not work on mobile devices
 - Dragging order persistence does not work on Safari and possibly other web browsers, feature was developed on Chrome.
 
-Because there are so many issues with making draggable TodoItems, I will create another branch named "![todo-app-no-draggable](https://github.com/AdamJablonka/clearblade-coding-challenge/tree/todo-app-no-draggable)" that does not use these features, as I cannot seem to fix this feature and it will cause more bug debt if I wanted to add more features.
-
-https://github.com/AdamJablonka/clearblade-coding-challenge/tree/todo-app-no-draggable
+Because there are so many issues with making draggable TodoItems, I will create another branch named "[todo-app-no-draggable](https://github.com/AdamJablonka/clearblade-coding-challenge/tree/todo-app-no-draggable)" that does not use these features, as I cannot seem to fix this feature and it will cause more bug debt if I wanted to add more features.

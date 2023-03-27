@@ -7,7 +7,7 @@ export const theme = createTheme({
       fontFamily: "Oswald, sans-serif",
     },
     h6: {
-      fontFamily: "Oswald, sans-serif",
+      fontFamily: "Roboto, sans-serif",
     },
     h3: {
       fontFamily: "Montserrat, sans-serif",

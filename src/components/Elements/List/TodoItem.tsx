@@ -20,7 +20,7 @@ export const TodoItem = ({
 
   useEffect(() => {
     onToggleComplete(todo.id, completed);
-  }, [completed]);
+  }, [completed, onToggleComplete, todo.id]);
 
   const handleSave = () => {
     // check if user entered non-empty title

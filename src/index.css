@@ -1,21 +1,19 @@
 .slanted-background {
-    position: absolute;
-    top: 25%;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    z-index: -1;
-}
-  
-.slanted-background::before {
-    content: "";
-    position: absolute;
-    top: -50%;
-    left: 0;
-    width: 100%;
-    height: 200%;
-    background-image: linear-gradient(176deg, #f9f9f9 50%, #252326 50%);
+  position: absolute;
+  top: 25%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1;
 }
 
-  
+.slanted-background::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: 0;
+  width: 100%;
+  height: 200%;
+  background-image: linear-gradient(176deg, #f9f9f9 50%, #e8e8e8 50%);
+}

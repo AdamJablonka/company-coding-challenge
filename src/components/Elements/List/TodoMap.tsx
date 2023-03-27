@@ -1,6 +1,5 @@
 import { TodoItem } from "./TodoItem";
-import { Typography } from "@mui/material";
-import { useTodoStore, useSearchStore } from "../../../stores";
+import { useTodoStore } from "../../../stores";
 import { Todo } from "../../../types";
 
 export const TodoMap = ({ filteredItems }: any) => {

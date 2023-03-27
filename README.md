@@ -1,46 +1,62 @@
-# Getting Started with Create React App
+# ClearBlade Todo App Coding challenge (todo-app-no-draggable)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a simple React App using Material-UI, Typescript, Zustand for state management, @hello-pangea/dnd for drag and drop, and attempts to follow Bulletproof react.
 
-## Available Scripts
+to install:
+`gh repo clone AdamJablonka/clearblade-coding-challenge`
 
-In the project directory, you can run:
+`npm install`
 
-### `npm start`
+`npm run start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Application features implemented
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- View all todos
+- Create new todos
+- Update the status and title of todos that have already been created
+- Delete todos
+- Search for todos by title
+- Filtering todos by status
 
-### `npm test`
+Some of the advanced features include:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Persist data in local storage to maintain it across refreshes
+- User CANNOT drag and drop todos to reorder them in this branch
+  - drag and drop feature located in main branch
 
-### `npm run build`
+## Files overview
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+**All global states are located in the src/stores folder.**
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- useSearchStore which stores data that keeps track of search and filter data
+- useTodoStore which stores all of the data that has to do with Todos along with respective functions.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+**Basic MUI theme location in src/providers/theme**
 
-### `npm run eject`
+- theme.ts includes primary color and font from the ClearBlade website.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+**All Button Components Created are located in src/components/Elements/Button**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- CreateNew is the create new button that outputs the TodoForm to create a new todo item.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- TodoActions are the group of buttons that are rendered on each todo item, which include delete, edit, toggle completion
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- TodoTabs holds the tabs which filter the items based on their completion.
 
-## Learn More
+**All List components are located in src/components/Elements/List**
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- List/Filtered lists includes 3 files, AllFilter, CompletedFilter, IncompleteFilter which are the components that take care of the logic that filters the todo items by completion status.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- TodoItem is the component that is each todo item, which outputs the title, completion, and the TodoActions buttons.
+
+- TodoList calls each of the List/Filtered based on the completion of the todo item.
+
+- TodoMap handles the logic to map all of the todo items (TodoItem components) from the Todo[] array that is stored in the useTodoStore zustand file.
+
+**All Form/Input components are located in src/components/Form**
+
+- EditTodoForm includes the Material UI text input field for when a user clicks on the edit button to edit a todo item (TodoItem). Takes user input and edits the todo with the same todo.id in the zustand useTodoStore file.
+
+- TodoForm is the component that is rendered when a user presses the CreateNew component. Takes in the user input, and creates a new Todo object, which then pushes it into the todos array located in the zustand useTodoStore file.
+
+- TodoSearch handles user input and inputs it into the zustand useSearchStore file, which any component can call to use to filter the currently displayed todos. This logic is called in the src/components/Elements/List/FilteredLists folder.

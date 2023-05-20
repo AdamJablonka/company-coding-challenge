@@ -1,4 +1,4 @@
-# ClearBlade Todo App Coding challenge (todo-app-no-draggable)
+# Company Todo App Coding challenge (todo-app-no-draggable)
 
 This is a simple React App using Material-UI, Typescript, Zustand for state management, @hello-pangea/dnd for drag and drop, and attempts to follow Bulletproof react.
 
